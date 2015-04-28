@@ -15,12 +15,12 @@ namespace ConsoleApplication3
         }
         static void Menu()
         {
-            Console.WriteLine("=======================\n    \n    Welcome to Infinity. \n    A text based adventure game where you take,\n    control of your character.\n    Choices you make affect the game content.\n    The adventure is now yours\n    1.Start Game\n    2.Cheat Sheet\n    3.Exit Game\n\n=======================");
+            Console.WriteLine("==========\n    \n    Welcome to Infinity. \n    A text based adventure game where you take,\n    control of your character.\n    Choices you make affect the game content.\n    The adventure is now yours\n    1.Start Game\n    2.Cheat Sheet\n    3.Exit Game\n\n===========");
 
             string input = Console.ReadLine();
             string startgame = ("Beginning Game");
-            string cs = ("Opening Cheat Sheet");
-            string exit = ("Thanks for Playing!");
+            string cs = ("Opening Cheat Sheet! (Not Developed yet, Press any key to return to menu)");
+            string exit = ("Thanks for Playing!(Not Developed yet, Press any key to return to menu)");
 
             switch (input.ToLower())
             {
@@ -57,23 +57,30 @@ namespace ConsoleApplication3
 
         static void cclass()
         {
-            Console.WriteLine("=========\nPlease choose Class between 1-5.\n1.Knight \n2.Mage\n3.Archer\n4.Dwarf\n5.Orc\nFor class Stats, type the class name\nfollowed by 'info'. E.g Orc Info\n=========");
-            string input = Console.ReadLine();
-            string class1 = ("The Knight is a soldier trained in protecting the royal family.\nNow elderly, and spending most time in Taverns, the knight\nSpends their days slaying monsters and other creatures\nfor bags of gold.\nPreferred Weapon: Sword\nPress Any Key To Return To class selection\n==========");
-            string class2 = ("The Mage is a mysterious character, the face covered a dark hood.\nThe mage knows when and when not to attack, \nand spends time roaming the land, rarely returning home.\nPreferred Weapon: Staff/Spells\nPress Any Key To Return To class selection\n==========");
-            string class3 = ("The Archer is an elf-like creature, preferring to stay in the shadows and remaining unknown.\nThe archer learns to survive and adapt, probably\nfrom previous generations living in the wild.\nThe Archer has great skill in craftman ship\nPreferred Weapon: Bow&Arrow\nPress Any Key To Return To class selection\n==========");
-            string class4 = ("The Dwarf is a small, wide character with a deep, unsatisfiable desire for gold.\nThe dwarf is the most loyal Class, and almost fearless\nThe dwarf loves to fight, drink, sing, then fight some more. \nPreferred weapon: Axes- Crafted from Molten Gold\nPress Any Key To Return To class selection\n==========");
-            string class5 = ("The Orc Known to most as barbaric creatures,The Orcs are actually very civillised. Living in large villages, Orcs live independently. It is a rare for an orc to spend longer than 10 hours outside their village.zn The Orc, once aggrivated, are blinded by a dark rage. The strength of the orcs has no limit. \nPreferred Weapon: Fists/Orc Blades.\nPress Any Key To Return To class selection\n==========");
-
-            switch (input.ToLower())
+            Console.WriteLine("\n==========    \n    Please Enter your Character name below\n==========");
+            string cname= Console.ReadLine();
+             Console.WriteLine("==========\n    Please choose Class between 1-5.\n    1.Knight \n    2.Mage\n    3.Archer\n    4.Dwarf\n    5.Orc\n    For class Stats, type the class name\n    followed by 'info'. E.g Orc Info\n==========");
+              string input = Console.ReadLine();     
+            int loop = 10;
+            while (loop < 100) 
             {
+        
+            string class1 = ("==========\n    The Knight is a soldier trained in protecting the royal family.\nNow elderly, and spending most time in Taverns, the knight\nSpends their days slaying monsters and other creatures\nfor bags of gold.\nPreferred Weapon: Sword\nPress Any Key To Return To class selection\n==========");
+            string class2 = ("==========\n    The Mage is a mysterious character, the face covered a dark hood.\nThe mage knows when and when not to attack, \nand spends time roaming the land, rarely returning home.\nPreferred Weapon: Staff/Spells\nPress Any Key To Return To class selection\n==========");
+            string class3 = ("==========\n    The Archer is an elf-like creature, preferring to stay in the shadows and remaining unknown.\nThe archer learns to survive and adapt, probably\nfrom previous generations living in the wild.\nThe Archer has great skill in craftman ship\nPreferred Weapon: Bow&Arrow\nPress Any Key To Return To class selection\n==========");
+            string class4 = ("==========\n    The Dwarf is a small, wide character with a deep, unsatisfiable desire for gold.\nThe dwarf is the most loyal Class, and almost fearless\nThe dwarf loves to fight, drink, sing, then fight some more. \nPreferred weapon: Axes- Crafted from Molten Gold\nPress Any Key To Return To class selection\n==========");
+            string class5 = ("==========\n    The Orc Known to most as barbaric creatures,The Orcs are actually very civillised. Living in large villages, Orcs live independently. It is a rare for an orc to spend longer than 10 hours outside their village.zn The Orc, once aggrivated, are blinded by a dark rage. The strength of the orcs has no limit. \nPreferred Weapon: Fists/Orc Blades.\nPress Any Key To Return To class selection\n==========");
+
+       
+            switch (input.ToLower())
+                {
                 case "knight info":
                 case "knight i":
                 case "k i":
                     Console.Clear();
                     Console.WriteLine(class1);
                     Console.ReadLine();
-                    cclass();
+                    loop = 11;
                     break;
                 case "mage info":
                 case "mage i":
@@ -111,19 +118,23 @@ namespace ConsoleApplication3
                 case "knight":
                 case "k":
                 case "1":
-                    Console.WriteLine("Are you sure you want to choose:Knight ?");
+                       if (input=="k"||input =="1")
+                    {
+                        input = "Knight";
+                    }
+                    Console.WriteLine("Are you sure you want to choose:" + input + "?");
                     string confirm = Console.ReadLine();
                     switch (confirm.ToLower())
                     {
                         case "yes":
                         case "y":
-                            begin(input);
+                            begin(input, cname);
                             break;
                         case "no":
                         case "n":
                             Console.WriteLine("Ok! returning to class selection\n\n");
                             Console.Clear();
-                            cclass();
+                            loop = 10;
                             break;
                     }
                     break;
@@ -132,38 +143,44 @@ namespace ConsoleApplication3
                 case "mage":
                 case "m":
                 case "2":
-                    Console.WriteLine("Are you sure you want to choose:Mage ?");
+                       if (input=="m"||input =="2")
+                    { 
+                        input="Mage";
+                    }
+                    Console.WriteLine("Are you sure you want to choose:" + input + "?");
                     string confirm1 = Console.ReadLine();
-                    switch (confirm1.ToLower())
-                    {
+                        switch (confirm1.ToLower())
+                        {
                         case "yes":
                         case "y":
-                            begin(input);
+                            loop = 5;
                             break;
                         case "no":
                         case "n":
                             Console.Clear();
                             Console.WriteLine("Ok! returning to class selection\n\n");
-                            cclass();
                             break;
-                    }
+                        }
                     break;
                 case "archer":
                 case "a":
                 case "3":
-                    Console.WriteLine("Are you sure you want to choose:Archer ?");
+                       if (input=="a"||input =="3")
+                    { 
+                        input="Archer";
+                    }
+                    Console.WriteLine("Are you sure you want to choose:" + input + "?");
                     string confirm2 = Console.ReadLine();
                     switch (confirm2.ToLower())
                     {
                         case "yes":
                         case "y":
-                            begin(input);
+                            loop = 5;
                             break;
                         case "no":
                         case "n":
                             Console.Clear();
                             Console.WriteLine("Ok! returning to class selection\n\n");
-                            cclass();
                             break;
                     }
 
@@ -171,38 +188,44 @@ namespace ConsoleApplication3
                 case "dwarf":
                 case "d":
                 case "4":
-                    Console.WriteLine("Are you sure you want to choose:Dwarf ?");
+                    if (input=="d"||input =="4")
+                    { 
+                        input="Dwarf";
+                    }
+                    Console.WriteLine("Are you sure you want to choose:"+input+ "?");
                     string confirm3 = Console.ReadLine();
                     switch (confirm3.ToLower())
                     {
                         case "yes":
                         case "y":
-                            begin(input);
+                            loop = 5;
                             break;
                         case "no":
                         case "n":
                             Console.Clear();
                             Console.WriteLine("Ok! returning to class selection\n\n");
-                            cclass();
                             break;
                     }
                     break;
                 case "orc":
                 case "o":
                 case "5":
-                    Console.WriteLine("Are you sure you want to choose:Orc ?");
+                       if (input=="o"||input =="5")
+                    { 
+                        input="Orc";
+                    }
+                    Console.WriteLine("Are you sure you want to choose:" + input + "?");
                     string confirm4 = Console.ReadLine();
                     switch (confirm4.ToLower())
                     {
                         case "yes":
                         case "y":
-                            begin(input);
+                            loop = 5;
                             break;
                         case "no":
                         case "n":
                             Console.Clear();
                             Console.WriteLine("Ok! returning to class selection\n\n");
-                            cclass();
                             break;
                     }
                     break;
@@ -212,15 +235,17 @@ namespace ConsoleApplication3
                     cclass();
                     break;
             }
+          }
+            begin(input, cname);
         }
-        static void room1()
+        static void room1(string choice, string cname)
         {
-            Console.WriteLine("You have reached Room1");
+            Console.WriteLine("==========\n    Welcome "+cname+". I've heard alot about you. The infamous "+choice);
             Console.ReadLine();
         }
 
 
-        static void begin(string input)
+        static void begin(string input,string cname)
         {
             Console.WriteLine("==========\nYou have chosen " + input + "\n========\nLoading Game\n");
 
@@ -231,15 +256,10 @@ namespace ConsoleApplication3
                 i++;
             }
             Console.WriteLine("\nClearing The Console. The game begins now");
-            Thread.Sleep(900);
+            Thread.Sleep(1000);
             Console.Clear();
-           string exit= Console.ReadLine();
-            if (exit.Equals ("exit"))
-            {
-                Environment.Exit(0);
-                
-            }
-        }
+            room1(input, cname);
+          }
 
 
     }
