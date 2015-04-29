@@ -59,11 +59,12 @@ namespace ConsoleApplication3
         {
             Console.WriteLine("\n==========    \n    Please Enter your Character name below\n==========");
             string cname= Console.ReadLine();
+            string input = "";
             int loop = 10;
             while (loop < 100) //this is where I want it to start again, if a user goes to info or say No when asked if they want to confirm.
             {
                 Console.WriteLine("==========\n    Please choose Class between 1-5.\n    1.Knight \n    2.Mage\n    3.Archer\n    4.Dwarf\n    5.Orc\n    For class Stats, type the class name\n    followed by 'info'. E.g Orc Info\n==========");
-                string input = Console.ReadLine();
+                input = Console.ReadLine();
                 {
 
                     string class1 = ("==========\n    The Knight is a soldier trained in protecting the royal family.\nNow elderly, and spending most time in Taverns, the knight\nSpends their days slaying monsters and other creatures\nfor bags of gold.\nPreferred Weapon: Sword\nPress Any Key To Return To class selection\n==========");
@@ -80,8 +81,6 @@ namespace ConsoleApplication3
                         case "k i":
                             Console.Clear();
                             Console.WriteLine(class1);
-                            Console.ReadLine();
-                            loop = 11; //Here, They've gone to class information, So I want it to say as soon as they click something, it goes back to the start of the loop. (same applies to all class info).
                             break;
                         case "mage info":
                         case "mage i":
@@ -89,7 +88,7 @@ namespace ConsoleApplication3
                             Console.Clear();
                             Console.WriteLine(class2);
                             Console.ReadLine();
-                            cclass();
+                          
                             break;
                         case "archer info":
                         case "archer i":
@@ -97,7 +96,7 @@ namespace ConsoleApplication3
                             Console.Clear();
                             Console.WriteLine(class3);
                             Console.ReadLine();
-                            cclass();
+                            
                             break;
                         case "dwarf info":
                         case "dwarf i":
@@ -105,7 +104,7 @@ namespace ConsoleApplication3
                             Console.Clear();
                             Console.WriteLine(class4);
                             Console.ReadLine();
-                            cclass();
+                            
                             break;
                         case "orc info":
                         case "orc i":
@@ -113,7 +112,6 @@ namespace ConsoleApplication3
                             Console.Clear();
                             Console.WriteLine(class5);
                             Console.ReadLine();
-                            cclass();
                             break;
 
                         case "knight":
@@ -163,6 +161,7 @@ namespace ConsoleApplication3
                                     Console.WriteLine("Ok! returning to class selection\n\n");
                                     break;
                             }
+
                             break;
                         case "archer":
                         case "a":
@@ -234,7 +233,6 @@ namespace ConsoleApplication3
 
                         default:
                             Console.WriteLine("Sorry. I don't understand that, please input your class choice\n========");
-                            cclass();
                             break;
                     }
                 }
