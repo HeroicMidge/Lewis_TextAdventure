@@ -117,123 +117,53 @@ namespace ConsoleApplication3
                         case "knight":
                         case "k":
                         case "1":
-                            if (input == "k" || input == "1")
-                            {
-                                input = "Knight"; //This makes it so the 'input' is actually the class name not the shortcut key.
-                            }
-                            Console.WriteLine("Are you sure you want to choose:" + input + "?");
-                            string confirm = Console.ReadLine();
-                            switch (confirm.ToLower())
-                            {
-                                case "yes":
-                                case "y": //If user is happy with class choice, then starts the begin method.
-                                    loop = 500;
-                                    break;
-                                case "no":
-                                case "n":
-                                    Console.WriteLine("Ok! returning to class selection\n\n");
-                                //here, if user says No, I want it to clear the console, and start class selection again.
-                                    Console.Clear();
-                                    loop = 10;
-                                    break;
-                            }
-                            break;
+                        input = "Knight"; //This makes it so the 'input' is actually the class name not the shortcut key.
+                        break;
 
 
                         case "mage":
                         case "m":
                         case "2":
-                            if (input == "m" || input == "2")
-                            {
-                                input = "Mage";
-                            }
-                            Console.WriteLine("Are you sure you want to choose:" + input + "?");
-                            string confirm1 = Console.ReadLine();
-                            switch (confirm1.ToLower())
-                            {
-                                case "yes":
-                                case "y":
-                                    loop = 500;
-                                    break;
-                                case "no":
-                                case "n":
-                                    Console.Clear();
-                                    Console.WriteLine("Ok! returning to class selection\n\n");
-                                    break;
-                            }
+                          
+                           input = "Mage";
+                           
+                      
 
                             break;
                         case "archer":
                         case "a":
                         case "3":
-                            if (input == "a" || input == "3")
-                            {
+                            
                                 input = "Archer";
-                            }
-                            Console.WriteLine("Are you sure you want to choose:" + input + "?");
-                            string confirm2 = Console.ReadLine();
-                            switch (confirm2.ToLower())
-                            {
-                                case "yes":
-                                case "y":
-                                    loop = 500;
-                                    break;
-                                case "no":
-                                case "n":
-                                    Console.Clear();
-                                    Console.WriteLine("Ok! returning to class selection\n\n");
-                                    break;
-                            }
-
-                            break;
+                                break;
                         case "dwarf":
                         case "d":
                         case "4":
-                            if (input == "d" || input == "4")
-                            {
+
+
                                 input = "Dwarf";
-                            }
-                            Console.WriteLine("Are you sure you want to choose:" + input + "?");
-                            string confirm3 = Console.ReadLine();
-                            switch (confirm3.ToLower())
-                            {
-                                case "yes":
-                                case "y":
-                                    loop = 500;
-                                    break;
-                                case "no":
-                                case "n":
-                                    Console.Clear();
-                                    Console.WriteLine("Ok! returning to class selection\n\n");
-                                    break;
-                            }
+
                             break;
                         case "orc":
                         case "o":
                         case "5":
-                            if (input == "o" || input == "5")
-                            {
-                                input = "Orc";
-                            }
-                            Console.WriteLine("Are you sure you want to choose:" + input + "?");
-                            string confirm4 = Console.ReadLine();
-                            switch (confirm4.ToLower())
-                            {
-                                case "yes":
-                                case "y":
-                                    loop = 500;
-                                    break;
-                                case "no":
-                                case "n":
-                                    Console.Clear();
-                                    Console.WriteLine("Ok! returning to class selection\n\n");
-                                    break;
-                            }
+                        input = "Orc";                                      
                             break;
 
                         default:
                             Console.WriteLine("Sorry. I don't understand that, please input your class choice\n========");
                             break;
+                    }
+                    Console.WriteLine("Are you sure you want to choose:" + input + "?");
+                    string confirm6 = Console.ReadLine();
+                    if (confirm6.ToLower().Equals("yes") || confirm6.ToLower().Equals("y"))
+                    {
+                        loop = 500;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Ok! returning to class selection\n\n");
                     }
                 }
             }
